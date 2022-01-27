@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  tldv-acastro:
+    image: descodms/tldv
+    restart: always
+    build: .
+    depends_on:
+      - mongodb-tldv
+    environment:
+      MONGO_URI: mongodb://tldv:tldv@mongodb-tldv:27017/tldv
+      PORT: 4040
+      API_PREFIX: /api/v1
+      SENTRY_DSN: https://582f10ef8b824193a552223d4f10460e@o174479.ingest.sentry.io/6170199
+    ports:
+      - 4040:4040
+
+  mongodb-tldv:
+    image: mongo:4
+    command: mongod
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin-user
+      MONGO_INITDB_ROOT_PASSWORD: admin-password
+      DB_NAME: tldv
+      DB_USER: tldv
+      DB_PASSWORD: tldv
+    ports:
+      - 27017:27017
+    volumes:
+      - db-data:/data/dbtldv
+      - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+
+  # tdlv-acastro-tests:
+  #   image: descodms/tdlv
+  #   command: dockerize
+  #     -wait tcp://mongodb-tdlv:27017 -wait tcp://localhost:4040 -timeout 10s
+  #     bash -c "npm run test"
+  #   environment:
+  #     MONGO_URI: mongodb://tdlv:tdlv@mongodb-tdlv:27017/tdlv
+  #     PORT: 4040
+  #     API_PREFIX: /api/v1
+  #     SENTRY_DSN: https://0c38c39474a045cf91f632091e0a6f18@o174479.ingest.sentry.io/6140556
+  #   depends_on:
+  #     - mongodb-tdlv
+  #     - tdlv-acastro
+
+volumes:
+  db-data:

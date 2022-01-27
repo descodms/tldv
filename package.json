@@ -1,0 +1,82 @@
+{
+  "name": "tldv-andy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "jest --detectOpenHandles",
+    "start-ts": "ts-node src/server.ts",
+    "start": "node build/server.js",
+    "build:clean": "rimraf build",
+    "build:tsc": "tsc",
+    "build": "npm run build:clean && npm run build:tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "*",
+    "@fingerprintjs/fingerprintjs-pro-server-api": "^0.2.1",
+    "@koa/cors": "^3.1.0",
+    "@sentry/node": "^6.16.1",
+    "@sentry/tracing": "^6.16.1",
+    "axios": "^0.24.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "express-winston": "^4.2.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.1.5",
+    "swagger-ui-express": "^4.3.0",
+    "uuidv4": "^6.2.12",
+    "validator": "^13.7.0",
+    "winston": "^3.3.3",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/koa": "^2.13.1",
+    "@types/koa__cors": "^3.0.2",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-json": "^2.0.18",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.1",
+    "@types/lodash": "^4.14.178",
+    "@types/node": "^14.14.33",
+    "@types/proxyquire": "^1.3.28",
+    "@types/supertest": "^2.0.11",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@types/validator": "^13.7.1",
+    "@types/yamljs": "^0.2.31",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageProvider": "v8",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json",
+      "node"
+    ],
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[tj]s?(x)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  }
+}

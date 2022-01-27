@@ -1,0 +1,53 @@
+swagger: '2.0'
+info:
+  title: tldv API
+  description: API description in Markdown.
+  version: 1.0.0
+host: localhost:4040
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /videos:
+    get:
+      summary: Returns a list of videos.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+  /video/{videoId}:
+    get:
+      summary: Returns a video by ID.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+    put:
+      summary: Updates a video.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+    delete:
+      summary: Deletes a video.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+  /video:
+    post:
+      summary: Creates a new video.
+      description: Optional extended description in Markdown.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
