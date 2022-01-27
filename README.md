@@ -18,7 +18,7 @@ https://www.getpostman.com/collections/37d1ae27cbe949524dd8
 
 - Sentry is being used for error tracking
 - Every incoming request has an unique requestId
-- Every incoming request is persisted in database with useful info for debugging: params, query, body, requesId, interactionType (endpoint description)
+- Every incoming request is persisted in database with useful info for debugging: params, query, body, requestId, interactionType (endpoint description)
 - get videos endpoint has filters (?limit=10&page=3&getPublic=true&timesViewed=950), in the postman collection are examples
 - get videos endpoint has pagination
 - database is automatically seeded at start
