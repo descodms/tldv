@@ -27,3 +27,8 @@ https://www.getpostman.com/collections/37d1ae27cbe949524dd8
 - tests are broken and no security audit due to lack of time 😅, also swagger docs are incomplete
 - I would have liked to add a basic authentication (username + password) and authorization for using the api (with JWT)
 - I hope you liked it 🤓
+
+## Super Bonus Point
+
+I added a super simple Notion integration: when a
+a new video is created with the post video endpoint, the video Url is saved in a Notion table/database, of course, this is working with my own Notion Key and databaseId, but it's working 😆

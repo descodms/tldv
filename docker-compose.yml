@@ -12,6 +12,8 @@ services:
       PORT: 4040
       API_PREFIX: /api/v1
       SENTRY_DSN: https://582f10ef8b824193a552223d4f10460e@o174479.ingest.sentry.io/6170199
+      NOTION_KEY: secret_yPKbdfJQaJ7vCEgJy1uEL8bKXIsqMbpqrVK7BbvpnNA
+      NOTION_DATABASE_ID: 277155ce984549c994181bbc8eec5623
     ports:
       - 4040:4040
 

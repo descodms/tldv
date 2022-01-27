@@ -5,7 +5,7 @@ import { Request, Response, NextFunction } from 'express'
 import VideoService from '../services/VideoService'
 const ObjectId = require('mongoose').Types.ObjectId
 import logger from '../shared/utils/logger'
-
+import NotionService from '../services/NotionService'
 export default class VideoController {
   static async getAll(
     req: Request,
@@ -83,6 +83,8 @@ export default class VideoController {
     let result
     try {
       result = await VideoService.create(video)
+      const notionService = new NotionService()
+      await notionService.addItem(video.url)
     } catch (error) {
       next(
         new BadRequest(

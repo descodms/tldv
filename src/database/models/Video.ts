@@ -1,12 +1,12 @@
 import mongoose, { Schema } from 'mongoose'
 
 export interface Video {
-  _id?: String
-  name: String
-  url: String
-  thumbnailUrl: String
-  isPrivate: Boolean
-  timesViewed: Number
+  _id?: string
+  name: string
+  url: string
+  thumbnailUrl: string
+  isPrivate: boolean
+  timesViewed: number
 }
 
 const VideoSchema: Schema = new Schema(
