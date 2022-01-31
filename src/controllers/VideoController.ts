@@ -83,8 +83,8 @@ export default class VideoController {
     let result
     try {
       result = await VideoService.create(video)
-      const notionService = new NotionService()
-      await notionService.addItem(video.url)
+      // const notionService = new NotionService()
+      // await notionService.addItem(video.url)
     } catch (error) {
       next(
         new BadRequest(
